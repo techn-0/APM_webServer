@@ -1,0 +1,191 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background: rgb(148,187,233);
+    background: radial-gradient(circle, rgba(148,187,233,1) 1%, rgba(191,181,218,1) 63%, rgba(238,174,202,1) 100%);
+    background-image: url("../wallpic/wall.jpg");
+    background-repeat : no-repeat;
+    background-size : 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 99%;
+    background-color: #c50537;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+border-radius: 0px 0px 40px 40px ;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 120vh;
+    margin-top: 60px;
+    overflow-y: auto;
+    height: 100vh;
+    box-sizing: border-box;
+    margin-bottom: 5%;
+    width: 80%;
+}
+
+#mp3Player{
+    left: 0;
+    background-color: #ff8c8c;
+    border: 1px solid #ccc;
+    color: #fff;
+    padding: 20px;
+    width: 200px;
+    height: auto;
+    margin: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.6);
+}
+
+#chat{
+    right: 0;
+    background: radial-gradient(circle, rgba(148,187,233,1) 1%, rgba(191,181,218,1) 63%, rgba(238,174,202,1) 100%);
+    border: 1px solid #ccc;
+    color: #fff;
+    padding: 20px;
+    width: 200px;
+    height: auto;
+    margin: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.6);
+}
+
+#letterContainer {
+    margin-top: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #eee;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 10px;
+    background-image: url("../wallpic/back.jpg");
+    background-repeat : no-repeat;
+    background-size : 100%;
+    min-height: 1000px;
+    border-radius: 30px;
+}
+
+.letter {
+    background-color: #fffed69b;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: calc(25% - 20px);
+    margin: 10px;
+    box-sizing: border-box;
+    align-self: flex-start;
+    max-height: 30px;
+    min-height: 200px;
+    overflow: auto;
+    border-radius: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 5px 5px 5px rgba(0, 0, 0, 0.6);
+}
+
+.letter img {
+    max-width: 100%;
+
+}
+
+#uploadContainer {
+    background-color: #a7e3c1;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #42b258;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+audio {
+    width: 100%;
+}
+
+textarea {
+    width: calc(100% - 20px);
+    height: 100px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#uploadContainer {
+    text-align: center;
+}
+
+#uploadContainer button {
+    margin-top: 10px;
+}
+
+#lpImage {
+    width: 150px;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.fly{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+.fly img{
+    width: 100px;
+}

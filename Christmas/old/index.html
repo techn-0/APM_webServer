@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Web Server</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f16c6c;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 120vh;
+            margin-top: 60px;
+            overflow-y: auto;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        #mp3Player, #chatContainer {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 200px;
+            height: 300px;
+            margin: 20px;
+            box-sizing: border-box;
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #mp3Player {
+            left: 0;
+        }
+
+        #chatContainer {
+            right: 0;
+            overflow: auto;
+        }
+
+        #letterContainer {
+            margin-top: 10vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #eee;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .letter {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: calc(25% - 20px);
+            margin: 10px;
+            box-sizing: border-box;
+            align-self: flex-start;
+            max-height: 150px; /* 편지의 최대 높이 설정 */
+            overflow: auto; /* 편지 내용이 편지의 영역을 벗어날 때 스크롤 생성 */
+}
+
+
+        #uploadContainer {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 100%;
+            margin-top: 20px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        textarea {
+            width: calc(100% - 20px);
+            height: 100px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+    
+    
+</head>
+<body>
+    <header>
+        <div>
+            <button onclick="location.href='login.php'">로그인</button>
+        </div>
+        <div>
+            <h1>Christmas Web Server</h1>
+        </div>
+    </header>
+
+    <main>
+        <div id="letterContainer">
+            <div class="letter">
+                <p>루크, 포스를믿거라 다른건 믿지마</p>
+                <p>-마스터 요다-</p>
+            </div>
+            <div class="letter">
+                <p>즐거운 크리스마스다</p>
+            </div>
+            <div class="letter">
+                <p>편지 내용 3</p>
+                <p>편지 내용 3</p>
+                <p>편지 내용 3</p>
+                <p>편지 내용 3</p>
+                <p>편지 내용 3</p>
+                <p>편지 내용 3</p>
+                <p>편지 내용 3</p>
+            </div>
+            <div class="letter">
+                <p>편지 내용 4</p>
+            </div>
+            <div class="letter">
+                <p>편지 내용 5</p>
+                <p>편지 내용 5</p>
+                <p>편지 내용 5</p>
+                <p>편지 내용 5</p>
+                <p>편지 내용 5</p>
+                <p>편지 내용 5</p>
+            </div>
+            <div class="letter">
+                <p>편지 내용 6</p>
+            </div>
+            <div class="letter">
+                <p>편지 내용 7</p>
+            </div>
+            <div class="letter">
+                <p>편지 내용 8</p>
+            </div>
+        </div>
+
+        <div id="uploadContainer">
+            <h2>새로운 편지 작성 및 업로드</h2>
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+                <textarea name="newLetterContent" placeholder="새로운 편지 내용을 입력하세요"></textarea>
+                <input type="file" name="userImage" accept=".jpg, .jpeg, .png, .gif">
+                <button type="submit">편지 업로드</button>
+            </form>
+        </div>
+    </main>
+
+    <div id="mp3Player">
+        <h3>크리스마스 음악</h3>
+        <audio controls>
+            <source src="audio.mp3" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+    <div id="chatContainer">
+        <h3>실시간 채팅</h3>
+        <ul id="chatMessages">
+            <!-- 채팅 메시지가 추가될 부분 -->
+        </ul
